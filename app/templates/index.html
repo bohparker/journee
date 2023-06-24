@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+    <h1>Journee</h1>
+    <hr>
+
+    <p>Welcome to Journee, your own personal journal.</p>
+    <br>
+    
+    {% if current_user.is_authenticated %}
+
+        <a href="{{url_for('bp_views.entries')}}">
+            <div class="button">
+                <h3>View your entries</h3>
+            </div>
+        </a>
+
+        <a href="{{url_for('bp_views.create_entry')}}">
+            <div class="button">
+                <h3>Create a new entry</h3>
+            </div>
+        </a>
+    
+    {% else %}
+
+        <p><a href="{{url_for('bp_auth.login')}}">
+        Login</a> to start journaling.</p>
+        <br>
+        <p>Or...</p>
+        <br>
+        <p><a href="{{url_for('bp_auth.register')}}">Register</a> 
+        to create an account.</p>
+
+    {% endif %}
+
+{% endblock %}

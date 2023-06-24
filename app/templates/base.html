@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Journee | {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{url_for('static', filename='images/favicons/favicon.ico')}}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{url_for('static', filename='images/favicons/apple-touch-icon.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{url_for('static', filename='images/favicons/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{url_for('static', filename='images/favicons/favicon-16x16.png')}}">
+    <link rel="manifest" href="{{url_for('static', filename='images/favicons/site.webmanifest')}}">
+    <link rel="mask-icon" href="{{url_for('static', filename='images/favicons/safari-pinned-tab.svg', color='#5bbad5')}}">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    {{ moment.include_moment() }}
+</head>
+<body>
+
+<div id="container">
+
+    <!-- mobile nav links -->
+    <nav class="mobile-nav">
+      <div id="menu-links">
+        <a href="{{url_for('bp_views.index')}}">Home</a>
+        <a href="{{url_for('bp_views.create_entry')}}">New Entry</a>
+        <a href="{{url_for('bp_views.entries')}}">Entries</a>
+      </div>
+      <!-- nav button -->
+      <a class="nav-button" onclick="menu()">
+        <div id="accordian">&#9776;</div>
+      </a>
+    </nav>
+    
+    <!-- nav for tablet and desktop -->
+    <nav class="tab-desk">
+      <ul>
+        <li><a href="{{url_for('bp_views.index')}}">Home</a></li>
+      	<li><a href="{{url_for('bp_views.create_entry')}}">New Entry</a></li>
+      	<li><a href="{{url_for('bp_views.entries')}}">Entries</a></li>
+      </ul>
+    </nav>
+
+    <main>
+
+      <div>
+        {% for category, message in get_flashed_messages
+          (with_categories=true) %}
+          <div class="flash-message {{category}}">
+            {{message}}
+          </div>
+        {% endfor %}
+      </div>
+
+      <!-- Login Buttons -->
+      {% if current_user.is_authenticated %}
+            <div class="login-links">
+                <a href="{{ url_for('bp_auth.logout') }}">Logout</a>
+            </div>
+        {% else %}
+            <div class="login-links">
+                <a href="{{ url_for('bp_auth.login') }}">Login</a> | 
+                <a href="{{ url_for('bp_auth.register') }}">Register</a>
+            </div>
+        {% endif %}
+
+      {% block content %}{% endblock %}
+
+    </main>
+
+    <footer>
+        <p>Copyright &copy; 2023 <a href="https://boparker.me">
+        Bo Hendrix Parker</a></p>
+    </footer>
+  
+    </div>
+  
+  <script src="{{url_for('static', filename='js/script.js')}}"></script>
+  </body>
+  </html>
+
+</div>
+
+</body>
+</html>

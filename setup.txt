@@ -1,0 +1,23 @@
+1. Create virtual environment:
+	$ python3 -m venv venv
+	$ source venv/bin/activate
+	# install initial pip packages that don't have versions
+	$ pip install -r init-req.txt
+	# add packages with versions to requirements.txt
+	$ pip freeze > requirements.txt
+
+2. Create .env file and set:
+	SECRET_KEY
+	DATABASE_URL
+
+3. Database initialization
+	$ flask db init
+	add models to migrations/env.py
+	import app.models
+	from app.app import db
+
+	$ flask db migrate -m "initial migration"
+	$ flask db upgrade
+
+	take migrations/ and instance/ out of .gitignore so they are included
+		in version control

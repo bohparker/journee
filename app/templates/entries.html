@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Entries{% endblock %}
+{% block content %}
+
+    {# don't use HTML to validate the form #}
+    <form id="entries-form" novalidate
+        method="POST"
+        action="{{ url_for('bp_views.entries') }}">
+            {{ form.csrf_token }}
+            {{ form.year.label }}
+            {{ form.year() }}
+            {{ form.month.label }}
+            {{ form.month() }}
+            {{ form.submit() }}
+    </form>
+
+    <div id="entries">
+    
+        {% for entry in entries %}
+            <br>
+            <hr>
+            <h3>{{ moment(entry.timestamp).format('dddd, MMMM D YYYY') }}</h3>
+            <div class="entry">
+                <p>{{ entry.content}}</p>
+            </div>
+        {% endfor %}
+
+    </div>
+
+{% endblock %}

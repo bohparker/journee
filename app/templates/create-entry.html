@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}New Entry{% endblock %}
+{% block content %}
+
+<h1>Create a New Entry</h1>
+
+{# don't use HTML to validate the form #}
+    <form class="form" id="entry-form" novalidate
+        method="POST"
+        action="{{ url_for('bp_views.create_entry') }}">
+        <fieldset><legend>New Entry</legend>
+        <div class="form-grid">
+            {{ form.csrf_token }}
+            {{ form.content(rows="20") }}
+            {{ form.submit() }}
+        </div>
+        </fieldset>
+    </form>
+
+{% endblock %}

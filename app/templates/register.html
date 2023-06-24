@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Register{% endblock %}
+{% block content %}
+
+    {# don't use HTML to validate the form #}
+    <form class="form" novalidate
+        method="POST"
+        action="{{ url_for('bp_auth.register')}}">
+        <fieldset><legend>Register</legend>
+        <div class="form-grid">
+            {{ form.csrf_token }}
+            {{ form.username.label }}
+            {{ form.username() }}
+            {{ form.password.label }}
+            {{ form.password() }}
+            {{ form.confirm.label }}
+            {{ form.confirm() }}
+            {{ form.submit() }}
+        </div>
+        </fieldset>
+    </form>
+
+{% endblock %}

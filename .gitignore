@@ -1,0 +1,8 @@
+__pycache__/
+instance/
+migrations/
+venv/
+.env
+.DS_Store
+alembic.ini
+db.sqlite

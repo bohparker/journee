@@ -1,0 +1,377 @@
+/* CSS RESET */
+#container, body, header, nav, main, .mobile-header, .nav-button, .mobile-nav, p, footer, a, div, h1, h3, h4, h5, p, img, ul, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+
+
+/* Color Theme */
+body {
+    background-color: #000;
+    color: #2C9E4B;
+    font-family: OCR A Std, monospace;
+    font-size: 1.2em;
+    }
+    
+    img, video {
+    max-width: 100%;
+    display: block;
+    }
+    
+    video {
+    margin: 0 auto;
+    width: 75%;
+    }
+    
+    #container {
+    min-width: 250px;
+    }
+    
+    a {
+        text-decoration: none;
+        color: #E68E36;
+    }
+    
+    a:hover {
+        text-decoration: underline;
+    }
+
+    nav {
+        background-color: #E68E36;
+        border-bottom-right-radius: 4px;
+        border-bottom-left-radius: 4px;
+    }
+
+    nav a {
+        color: #DD517F;
+    }
+
+    #accordian {
+        color: #DD517F;
+    }
+
+    h1 {
+        color: #DD517F;
+    }
+
+    h3 {
+        color: #E68E36;
+    }
+
+    form {
+        clear:both;
+    }
+
+    input {
+        background-color: #9ED763;
+        color: #E68E36;
+        font-family: OCR A Std, monospace;
+        font-size: 1.1em;
+        padding: 5px 5px;
+        border-radius: 4px;
+        margin-bottom: 0.5em;
+    }
+
+    input[type=submit] {
+        background-color: #E68E36;
+        color: #217638;
+        margin-bottom: 0.5em;
+        padding: 5px 5px;
+        font-size: 1.1em;
+        border-radius: 4px;
+    }
+
+    input[type=submit]:hover {
+        background-color: #DD517F;
+        color: #E68E36;
+    }
+
+    select {
+        margin-bottom: 0.5em;
+        padding: 5px 5px;
+        background-color: #E68E36;
+        color: #217638;
+        border-radius: 4px;
+        font-size: 1.1em;
+        font-family: OCR A Std, monospace;
+    }
+
+    textarea {
+        background-color: #000;
+        width: 100%;
+        resize: none;
+        color: #2C9E4B;
+        font-size: 1.2em;
+    }
+
+    #entries {
+        width: 90%;
+        margin: auto;
+    }
+
+    #entry-form {
+        margin: auto;
+        width: 90%;
+    }
+
+    .entry {
+        white-space: pre-wrap;
+    }
+
+    hr {
+        border: 2px solid #DD517F;
+    }
+
+    .button {
+        margin: auto;
+        background-color: #9ED763;
+        border-radius: 4px;
+        text-align: center;
+        margin-bottom: 0.5em;
+        padding: 5px 5px;
+        width: 75%;
+    }
+
+  
+
+/* flash messages */
+.flash-message {
+width: 100%;
+display: block;
+padding: 1.1em;
+border-radius: 4px;
+margin-top: 4px;
+color: #000;
+}
+
+.success {
+background-color: lightgreen;
+border: 4px solid green;
+}
+
+.info {
+background-color: lightblue;
+border: 4px solid blue;
+}
+
+.warning {
+background-color: lightyellow;
+border: 4px solid yellow;
+}
+
+.danger {
+background-color: lightcoral;
+border: 4px solid red;
+}
+
+/* Add box-sizing border-box to all elements */
+* {
+box-sizing: border-box;
+}
+
+
+/* NAV */
+#menu-links a {
+    margin: 0;
+    border-bottom: 1px;
+}
+
+.nav-button {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #000;
+}
+
+.mobile-nav {
+}
+
+.mobile-nav a {
+display: block;
+text-align: center;
+text-decoration: none;
+padding: 1%;
+font-size: 1.5em;
+}
+
+#accordian {
+font-size: 1.5em;
+}
+
+.login-links {
+    float: right;
+    margin: 0.5em 0 0.5em 0;
+}
+
+
+/* main */
+main {
+padding: 1.2em;
+font-size: 1.1em;
+margin-top: 60px;
+}
+
+
+/* Footer */
+footer {
+clear: both;
+margin-top: 20px;
+width: 100%;
+padding: 4%;
+position: fixed;
+bottom: 0;
+text-align: center;
+}
+
+footer p {
+font-size: 0.8em;
+padding: 0 1em;
+}
+
+
+/* Forms */
+.form {
+    width: 70%;
+    margin: auto;
+}
+
+.form-grid label {
+    display: block;
+}
+
+.form-grid input {
+    width: 100%;
+    display: block;
+    float: left;
+}
+
+
+/* mobile class for mobile screens */
+.mobile {
+display: block;
+}
+
+.tab-desk, #menu-links {
+display: none;
+}
+
+.desk {
+display: none;
+}
+
+.mobile-tab {
+display: block;
+}
+
+
+@media screen and (min-width: 300px), print {
+    #accordian {
+        font-size: 2.5em;
+    }
+}
+
+@media screen and (min-width: 370px), print {
+    #accordian {
+        font-size: 2.8em;
+    }
+}
+
+/* tablet media query */
+@media screen and (min-width: 600px), print {
+    .mobile, .mobile-nav a {
+        display: none;
+    }
+
+    .mobile-tab {
+        display: block;
+    }
+
+    .tab-desk {
+        display: block;
+    }
+
+    .desk {
+        display: none;
+    }
+
+
+    /* nav */
+    nav {
+        padding: 1.2em;
+        border-bottom-right-radius: 4px;
+        border-bottom-left-radius: 4px;
+    }
+
+    nav ul {
+        list-style-type: none;
+    }
+
+    nav li {
+        display: inline-block;
+        margin-right: 1.2em;
+    }
+
+    nav li a {
+        display: block;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    nav li a:hover {
+        text-decoration: underline;
+    }
+
+    input[type=submit]:hover {
+        cursor: pointer;
+    }
+
+    main {
+        margin-top: 0;
+    }
+
+}
+
+/* desktop media query */
+@media screen and (min-width: 1000px), print {
+    .desk {
+        display: block;
+    }
+
+    .mobile-tab {
+        display: none;
+    }
+
+    #container {
+        width: 1000px;
+        margin: 0 auto;
+    }
+
+    video {
+        display: block;
+        width: 90%;
+        margin: auto;
+    }
+
+    nav li {
+        font-size: 1.5em;
+    }
+}
+
+/* large desktop media query */
+@media screen and (min-width: 1651px), print{
+    #container {
+        width: 1100px;
+        margin: 0 auto;
+    }
+}
+
+/* print media query */
+@media print {
+    body {
+        background-color: #fff;
+        color: #000;
+    }
+}
