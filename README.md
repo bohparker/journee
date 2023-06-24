@@ -13,8 +13,8 @@ $ pip install -r requirements.txt
 
 ### Environment Variables
 Create a .env file in the project and enter the following environment variables:  
-`SECRET_KEY  
-`DATABASE_URL
+SECRET_KEY  
+DATABASE_URL
 
 ### Database Initialization
 Initialize the database with flask-migrate:  
